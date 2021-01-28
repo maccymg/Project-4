@@ -2,10 +2,15 @@
   box-sizing: border-box;
 }
 
+#root {
+  background-color: #faf9f7;
+}
+
 .main {
   display: flex;
   flex-direction: column;
-  margin: 0px 30px;
+  margin: 0px 50px;
+  background-color: #faf9f7;
 }
 
 .header {
@@ -15,6 +20,9 @@
   justify-content: center;
   font-family: "Lato", "helvetica neue", helvetica, sans-serif;
   font-size: 30px;
+  .title-name {
+    color: #222222;
+  }
 }
 
 .nav-bar-container {
@@ -36,6 +44,7 @@
   border-right: 1px solid #d9d9d9;
   font-size: 14px;
   font-family: "Lato", "helvetica neue", helvetica, sans-serif;
+  color: #222222;
 }
 
 .last-nav-bar-item {
@@ -53,29 +62,37 @@
   margin-bottom: 20px;
 }
 
+.p-c-title {
+  margin: 25px 0px;
+  font-size: 22px;
+  color: #222222;
+  font-family: "Lato", "helvetica neue", helvetica, sans-serif;
+}
+
 .picture-card-container {
-  height: 374px;
-  width: 300px;
+  height: 345px;
+  width: 255px;
   width: calc(100% / 4 - 30px);
   display: flex;
   flex-direction: column;
 }
 
 .image-container {
-  height: 300px;
+  height: 255px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .images {
-  max-height: 300px;
-  max-width: 300px;
+  max-height: 255px;
+  max-width: 255px;
 }
 
 .picture-card-text {
   display: flex;
   flex-direction: column;
+  color: #222222;
 }
 
 .picture-card-text-item {
@@ -83,30 +100,101 @@
   justify-content: center;
 }
 
-main-picture-content {
-  display: flex;
-  justify-content: space-between;
-  background-color: black;
-}
-
-picture-content {
-  display: flex;
-  background-color: black;
-}
-
-
 #root > div > div.container > div.picture-content > div.main-picture-content {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  border-bottom: 1px solid #d9d9d9;
 }
 
-@media only screen and (max-width: 1024px) {
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 0px;
+}
 
-  .picture-card {
+.icon {
+  padding: 0px 20px;
+  font-size: 25px;
+  color: #222222;
+}
+
+.footer-copyright {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 30px 0px;
+}
+
+.copyright {
+  font-size: 12px;
+  line-height: 1.5px;
+  font-family: "Lato", "helvetica neue", helvetica, sans-serif;
+  color: #222222;
+}
+
+//* News + Bio
+
+.bio-main {
+  display: flex;
+  flex-grow: 1;
+}
+
+.bio-photo-container {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+
+.bio-photo {
+  border: 1px solid black;
+  width: 300px;
+  height: 500px;
+}
+
+.bio-info-container {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+
+
+
+@media only screen and (max-width: 1160px) {
+
+  .picture-card-container {
     width: calc(100% / 3 - 30px);
-    display: flex;
-    flex-direction: column;
+  }
+  .main {
+    margin: 0px 60px
+  }
+}
+
+@media only screen and (max-width: 850px) {
+
+  .picture-card-container {
+    width: calc(100% / 2 - 30px);
   }
 
+  .main {
+    margin: 0px 50px
+  }
+
+  .bio-main {
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 580px) {
+
+  .picture-card-container {
+    width: calc(100% / 1 - 30px);
+  }
+
+  .main {
+    margin: 0px 40px
+  }
+  
 }

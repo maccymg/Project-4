@@ -26,7 +26,7 @@ function NewWork() {
     <div className="main">
       <div className="header">
         <Link to="/new-work" style={{ textDecoration: 'none', color: 'black' }}>
-          <p>PUFF MORGAN-GILES</p>
+          <p className="title-name">PUFF MORGAN-GILES</p>
         </Link>
       </div>
       <div className="nav-bar-container">
@@ -36,7 +36,7 @@ function NewWork() {
         <div className="main-photo">
         </div>
         <div className="picture-content">
-          <div className="p-c-title"></div>
+          <div className="p-c-title">New Work</div>
           <div className="main-picture-content">
             {newWork && newWork.map(picture => (
               <div key={picture.id} className="picture-card-container">
@@ -45,11 +45,21 @@ function NewWork() {
                 </div>
                 <div className="picture-card-text">
                   <div className="picture-card-text-item">{picture.name}</div>
-                  <div className="picture-card-text-item">{picture.size}</div>
+                  <div className="picture-card-text-item">{`${picture.style}, ${picture.size}`}</div>
                   <div className="picture-card-text-item">{picture.status}</div>
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+        <div className="footer">
+          <div className="footer-icons">
+            <div className="fa fa-facebook icon"></div>
+            <div className="fa fa-twitter icon"></div>
+            <div className="fa fa-instagram icon"></div>
+          </div>
+          <div className="footer-copyright">
+            <p className="copyright">© Copyright 2021 Puff Morgan-Giles Art. All Rights Reserved.</p>
           </div>
         </div>
       </div>
