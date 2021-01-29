@@ -34,9 +34,15 @@ function Sketches() {
   return (
     <div className="main">
       <div className="header">
-        <Link to="/new-work" style={{ textDecoration: 'none', color: 'black' }}>
-          <p className="title-name">PUFF MORGAN-GILES</p>
-        </Link>
+        <div className="head-s-one">
+          <div className="fa fa-bars"></div>
+        </div>
+        <div className="head-s-two">
+          <Link to="/new-work" style={{ textDecoration: 'none', color: 'black' }}>
+            <p className="title-name">PUFF MORGAN-GILES</p>
+          </Link>
+        </div>
+        <div className="head-s-one"></div>
       </div>
       <div className="nav-bar-container">
         <Nav />
@@ -51,8 +57,8 @@ function Sketches() {
                   <img src={`http://localhost:8000${picture.image}`} className="images"></img>
                 </div>
                 <div className="picture-card-text">
-                  <div className="picture-card-text-item">{picture.name}</div>
-                  <div className="picture-card-text-item">{picture.style}</div>
+                  <div className="picture-card-text-name">{picture.name}</div>
+                  <div className="picture-card-text-style">{picture.style}</div>
                 </div>
               </div>
             ))}

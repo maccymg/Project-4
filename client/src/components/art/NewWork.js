@@ -2,11 +2,21 @@ import React from 'react'
 import Nav from '../common/Nav'
 import { getAllPictures } from '../../lib/api'
 import { Link } from 'react-router-dom'
+import { slide as Menu } from 'react-burger-menu'
 
 
 function NewWork() {
   const [newWork, setNewWork] = React.useState(null)
+  const [isOpen, setIsOpen] = React.useState(false)
   
+  const showSettings = (event) => {
+    event.preventDefault()
+  }
+  
+  const handleMenuToggle = () => {
+    setIsOpen(!isOpen)
+    console.log(isOpen)
+  }
 
   React.useEffect(() => {
     const getData = async () => {
@@ -20,14 +30,34 @@ function NewWork() {
     getData()
   }, [])
 
+
+
   
   // <img src={require('../../media/images/IMG_5762.jgp')} />
   return (
     <div className="main">
       <div className="header">
-        <Link to="/new-work" style={{ textDecoration: 'none', color: 'black' }}>
-          <p className="title-name">PUFF MORGAN-GILES</p>
-        </Link>
+        <div className="head-s-one">
+          <div className="fa fa-bars" onClick={handleMenuToggle}></div>
+          {isOpen ?
+            <Menu>
+              <a className="menu-item" href="/new-work">New Work</a>
+              <a className="menu-item" href="/portraits">Portraits</a>
+              <a className="menu-item" href="/sketches">Sketches</a>
+              <a className="menu-item" href="/news-bio">News&Biography</a>
+              <a onClick={showSettings} href=""></a>
+            </Menu>
+            :
+            <div></div>
+          }
+        </div>
+        <div className="head-s-two">
+          <Link to="/new-work" style={{ textDecoration: 'none', color: 'black' }}>
+            <p className="title-name">PUFF MORGAN-GILES</p>
+          </Link>
+        </div>
+        <div className="head-s-one">
+        </div>
       </div>
       <div className="nav-bar-container">
         <Nav />
@@ -44,9 +74,9 @@ function NewWork() {
                   <img src={`http://localhost:8000${picture.image}`} className="images"></img>
                 </div>
                 <div className="picture-card-text">
-                  <div className="picture-card-text-item">{picture.name}</div>
-                  <div className="picture-card-text-item">{`${picture.style}, ${picture.size}`}</div>
-                  <div className="picture-card-text-item">{picture.status}</div>
+                  <div className="picture-card-text-name">{picture.name}</div>
+                  <div className="picture-card-text-style">{`${picture.style}, ${picture.size}`}</div>
+                  <div className="picture-card-text-price">{picture.status}</div>
                 </div>
               </div>
             ))}

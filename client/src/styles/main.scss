@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+html {
+  background-color: #faf9f7;
+}
+
 #root {
   background-color: #faf9f7;
 }
@@ -16,13 +20,29 @@
 .header {
   width: 100%;
   display: flex;
+  flex-grow: 1;
   align-items: center;
-  justify-content: center;
   font-family: "Lato", "helvetica neue", helvetica, sans-serif;
   font-size: 30px;
   .title-name {
     color: #222222;
   }
+}
+
+.head-s-one {
+  display: flex;
+  flex: 1;
+}
+
+.head-s-two {
+  display: flex;
+  flex: 7;
+  justify-content: center;
+}
+.fa-fa-bars {
+  display: flex;
+  justify-content: flex-start;
+  background-color: #fff;
 }
 
 .nav-bar-container {
@@ -93,6 +113,15 @@
   display: flex;
   flex-direction: column;
   color: #222222;
+  line-height: 1.5;
+  font-size: 12px;
+  justify-content: center;
+  align-items: center;
+}
+
+.picture-card-text-name {
+  margin-top: 5px;
+  font-weight: bold;
 }
 
 .picture-card-text-item {
@@ -140,24 +169,44 @@
 .bio-main {
   display: flex;
   flex-grow: 1;
+  border-bottom: 1px solid #d9d9d9;
+  margin-bottom: 20px;
+  padding-bottom: 40px;
 }
 
 .bio-photo-container {
   display: flex;
   flex: 1;
   justify-content: center;
+  align-items: center;
 }
 
 .bio-photo {
   border: 1px solid black;
   width: 300px;
   height: 500px;
+  margin-top: 20px;
 }
 
 .bio-info-container {
   display: flex;
   flex: 1;
+  flex-direction: column;
   justify-content: center;
+  color: #222222;
+  font-size: 12px;
+}
+
+.bio-section-one {
+  line-height: 1.5;
+}
+
+.bio-section-two {
+  line-height: 1.5;
+}
+
+.small-title {
+  font-weight: bold;
 }
 
 
@@ -185,6 +234,34 @@
   .bio-main {
     flex-direction: column;
   }
+
+  .nav-bar-container {
+    display: none;
+  }
+
+  .bm-burger-button {
+    position: fixed;
+    width: 0px;
+    height: 0px;
+  }
+
+  .menu-item {
+    font-size: 14px;
+    line-height: 1.5;
+    color: white;
+    padding-top: 20px;
+    padding-left: 20px;
+    text-decoration: none;
+  }
+
+  .bm-menu {
+    background-color: #020202af;
+  }
+
+
+  .bm-cross {
+    background: #fff
+  }
 }
 
 @media only screen and (max-width: 580px) {
@@ -198,3 +275,11 @@
   }
   
 }
+
+@media only screen and (min-width: 850px) {
+  .head-s-one {
+    display: none;
+  }
+}
+
+
