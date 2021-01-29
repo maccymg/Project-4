@@ -95,6 +95,9 @@ html {
   width: calc(100% / 4 - 30px);
   display: flex;
   flex-direction: column;
+  &:hover {
+    background-color: white;
+  }
 }
 
 .image-container {
@@ -182,10 +185,10 @@ html {
 }
 
 .bio-photo {
-  border: 1px solid black;
-  width: 300px;
-  height: 500px;
   margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .bio-info-container {
@@ -209,6 +212,8 @@ html {
   font-weight: bold;
 }
 
+//* Burger
+
 .burger-menu {
   display: flex;
   align-items: center;
@@ -229,6 +234,41 @@ html {
   border: 1px solid black;
   height: 400px;
   margin-bottom: 20px;
+}
+
+//* Paiting Show
+
+.p-show-image {
+  max-height: 500px;
+  max-width: 500px;
+}
+
+.p-show-info-container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  color: #222222;
+  justify-content: space-evenly;
+  margin-left: 40px;
+}
+
+.p-show-section-one {
+  font-size: 20px;
+  border-bottom: 1px solid #d9d9d9;
+  padding-bottom: 30px;
+  padding-top: 30px;
+  margin-top: 20px;
+}
+
+.p-show-section-two {
+  border-bottom: 1px solid #d9d9d9;
+  padding-bottom: 30px;
+  padding-top: 30px;
+}
+
+.p-show-section-three {
+  padding-bottom: 30px;
+  padding-top: 30px;
 }
 
 
@@ -271,6 +311,11 @@ html {
 
   .main {
     margin: 0px 40px
+  }
+
+  .p-show-image {
+    max-height: 300px;
+    max-width: 300px;
   }
   
 }

@@ -87,14 +87,16 @@ function NewWork() {
           <div className="main-picture-content">
             {newWork && newWork.map(picture => (
               <div key={picture.id} className="picture-card-container">
-                <div className="image-container">
-                  <img src={`http://localhost:8000${picture.image}`} className="images"></img>
-                </div>
-                <div className="picture-card-text">
-                  <div className="picture-card-text-name">{picture.name}</div>
-                  <div className="picture-card-text-style">{`${picture.style}, ${picture.size}`}</div>
-                  <div className="picture-card-text-price">{picture.status}</div>
-                </div>
+                <Link to={`/pictures/${picture.id}`} style={{ textDecoration: 'none', color: 'black' }}>
+                  <div className="image-container">
+                    <img src={`http://localhost:8000${picture.image}`} className="images"></img>
+                  </div>
+                  <div className="picture-card-text">
+                    <div className="picture-card-text-name">{picture.name}</div>
+                    <div className="picture-card-text-style">{`${picture.style}, ${picture.size}`}</div>
+                    <div className="picture-card-text-price">{picture.status}</div>
+                  </div>
+                </Link>
               </div>
             ))}
           </div>

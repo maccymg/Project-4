@@ -5,3 +5,7 @@ const baseUrl = '/api'
 export function getAllPictures() {
   return axios.get(`${baseUrl}/pictures/`)
 }
+
+export function getSinglePicture(id) {
+  return axios.get(`${baseUrl}/pictures/${id}`)
+}
