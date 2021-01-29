@@ -34,7 +34,6 @@ function Sketches() {
 
   const handleMenuToggle = () => {
     setIsClosed(!isClosed)
-    console.log(isClosed)
   }
 
 

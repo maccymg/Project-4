@@ -7,7 +7,6 @@ function NewsBio() {
 
   const handleMenuToggle = () => {
     setIsClosed(!isClosed)
-    console.log(isClosed)
   }
 
   return (

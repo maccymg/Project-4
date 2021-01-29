@@ -23,7 +23,6 @@ function PaintingShow() {
 
   const handleMenuToggle = () => {
     setIsClosed(!isClosed)
-    console.log(isClosed)
   }
 
   return (
@@ -83,7 +82,7 @@ function PaintingShow() {
           </div>
         </div>
         :
-        <div>Somthing went wrong</div>
+        <div>Loading ...</div>
       }
       <div className="footer">
         <div className="footer-icons">

@@ -22,7 +22,6 @@ function Portraits() {
 
   const handleMenuToggle = () => {
     setIsClosed(!isClosed)
-    console.log(isClosed)
   }
 
   const filteredPictures = newPortraits ? newPortraits.filter(sketch => {

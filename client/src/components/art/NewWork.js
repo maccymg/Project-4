@@ -9,13 +9,9 @@ function NewWork() {
   const [newWork, setNewWork] = React.useState(null)
   const [isClosed, setIsClosed] = React.useState(true)
   
-  // const showSettings = (event) => {
-  //   event.preventDefault()
-  // }
   
   const handleMenuToggle = () => {
     setIsClosed(!isClosed)
-    console.log(isClosed)
   }
 
   React.useEffect(() => {
@@ -30,20 +26,7 @@ function NewWork() {
     getData()
   }, [])
 
-  // <Menu disableAutoFocus
-  //           width={ '100px' } isOpen={ false }
-  //           onOpen={handleMenuToggle}>
-  //           <a className="menu-item" href="/new-work">New Work</a>
-  //           <a className="menu-item" href="/portraits">Portraits</a>
-  //           <a className="menu-item" href="/sketches">Sketches</a>
-  //           <a className="menu-item" href="/news-bio">News&Biography</a>
-  //           <a onClick={showSettings} href=""></a>
-  //         </Menu>
-
-
-
   
-  // <img src={require('../../media/images/IMG_5762.jgp')} />
   return (
     <div className="main">
       <div className="header">
