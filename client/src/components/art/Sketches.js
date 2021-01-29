@@ -5,6 +5,7 @@ import { getAllPictures } from '../../lib/api'
 
 function Sketches() {
   const [newSketches, setNewSketches] = React.useState(null)
+  const [isClosed, setIsClosed] = React.useState(true)
   
 
   React.useEffect(() => {
@@ -31,6 +32,12 @@ function Sketches() {
   }) : null
 
 
+  const handleMenuToggle = () => {
+    setIsClosed(!isClosed)
+    console.log(isClosed)
+  }
+
+
   return (
     <div className="main">
       <div className="header">
@@ -47,6 +54,26 @@ function Sketches() {
       <div className="nav-bar-container">
         <Nav />
       </div>
+      {isClosed ?
+        <div></div>
+        :
+        <div className="main-photo-burger">
+          <div className="burger-menu">
+            <Link onClick={handleMenuToggle} to="/new-work" style={{ textDecoration: 'none', color: 'black' }}>
+              <div className="burger-item">NEW WORK</div>
+            </Link>
+            <Link onClick={handleMenuToggle} to="/portraits" style={{ textDecoration: 'none', color: 'black' }}>
+              <div className="burger-item">PORTRAITS</div>
+            </Link>
+            <Link onClick={handleMenuToggle} to="/sketches" style={{ textDecoration: 'none', color: 'black' }}>
+              <div className="burger-item">SKETCHES</div>
+            </Link>
+            <Link onClick={handleMenuToggle} to="/news-bio" style={{ textDecoration: 'none', color: 'black' }}>
+              <div className="burger-item">NEWS&BIOGRAPHY</div>
+            </Link>
+          </div>
+        </div>
+      }
       <div className="container">
         <div className="picture-content">
           <div className="p-c-title">Sketches</div>

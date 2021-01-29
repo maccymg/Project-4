@@ -3,11 +3,18 @@ import Nav from '../common/Nav'
 import { Link } from 'react-router-dom'
 
 function NewsBio() {
+  const [isClosed, setIsClosed] = React.useState(true)
+
+  const handleMenuToggle = () => {
+    setIsClosed(!isClosed)
+    console.log(isClosed)
+  }
+
   return (
     <div className="main">
       <div className="header">
         <div className="head-s-one">
-          <div className="fa fa-bars"></div>
+          <div className="fa fa-bars" onClick={handleMenuToggle}></div>
         </div>
         <div className="head-s-two">
           <Link to="/new-work" style={{ textDecoration: 'none', color: 'black' }}>
@@ -16,6 +23,26 @@ function NewsBio() {
         </div>
         <div className="head-s-one"></div>
       </div>
+      {isClosed ?
+        <div></div>
+        :
+        <div className="main-photo-burger">
+          <div className="burger-menu">
+            <Link onClick={handleMenuToggle} to="/new-work" style={{ textDecoration: 'none', color: 'black' }}>
+              <div className="burger-item">NEW WORK</div>
+            </Link>
+            <Link onClick={handleMenuToggle} to="/portraits" style={{ textDecoration: 'none', color: 'black' }}>
+              <div className="burger-item">PORTRAITS</div>
+            </Link>
+            <Link onClick={handleMenuToggle} to="/sketches" style={{ textDecoration: 'none', color: 'black' }}>
+              <div className="burger-item">SKETCHES</div>
+            </Link>
+            <Link onClick={handleMenuToggle} to="/news-bio" style={{ textDecoration: 'none', color: 'black' }}>
+              <div className="burger-item">NEWS&BIOGRAPHY</div>
+            </Link>
+          </div>
+        </div>
+      }
       <div className="nav-bar-container">
         <Nav />
       </div>

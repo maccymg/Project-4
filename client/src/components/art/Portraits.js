@@ -5,6 +5,7 @@ import { getAllPictures } from '../../lib/api'
 
 function Portraits() {
   const [newPortraits, setNewPortraits] = React.useState(null)
+  const [isClosed, setIsClosed] = React.useState(true)
   
 
   React.useEffect(() => {
@@ -18,6 +19,11 @@ function Portraits() {
     }
     getData()
   }, [])
+
+  const handleMenuToggle = () => {
+    setIsClosed(!isClosed)
+    console.log(isClosed)
+  }
 
   const filteredPictures = newPortraits ? newPortraits.filter(sketch => {
     let i
@@ -34,7 +40,7 @@ function Portraits() {
     <div className="main">
       <div className="header">
         <div className="head-s-one">
-          <div className="fa fa-bars"></div>
+          <div className="fa fa-bars" onClick={handleMenuToggle}></div>
         </div>
         <div className="head-s-two">
           <Link to="/new-work" style={{ textDecoration: 'none', color: 'black' }}>
@@ -46,6 +52,26 @@ function Portraits() {
       <div className="nav-bar-container">
         <Nav />
       </div>
+      {isClosed ?
+        <div></div>
+        :
+        <div className="main-photo-burger">
+          <div className="burger-menu">
+            <Link onClick={handleMenuToggle} to="/new-work" style={{ textDecoration: 'none', color: 'black' }}>
+              <div className="burger-item">NEW WORK</div>
+            </Link>
+            <Link onClick={handleMenuToggle} to="/portraits" style={{ textDecoration: 'none', color: 'black' }}>
+              <div className="burger-item">PORTRAITS</div>
+            </Link>
+            <Link onClick={handleMenuToggle} to="/sketches" style={{ textDecoration: 'none', color: 'black' }}>
+              <div className="burger-item">SKETCHES</div>
+            </Link>
+            <Link onClick={handleMenuToggle} to="/news-bio" style={{ textDecoration: 'none', color: 'black' }}>
+              <div className="burger-item">NEWS&BIOGRAPHY</div>
+            </Link>
+          </div>
+        </div>
+      }
       <div className="container">
         <div className="picture-content">
           <div className="p-c-title">Portraits</div>

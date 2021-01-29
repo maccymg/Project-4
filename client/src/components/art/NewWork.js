@@ -2,20 +2,20 @@ import React from 'react'
 import Nav from '../common/Nav'
 import { getAllPictures } from '../../lib/api'
 import { Link } from 'react-router-dom'
-import { slide as Menu } from 'react-burger-menu'
+// import { slide as Menu } from 'react-burger-menu'
 
 
 function NewWork() {
   const [newWork, setNewWork] = React.useState(null)
-  const [isOpen, setIsOpen] = React.useState(false)
+  const [isClosed, setIsClosed] = React.useState(true)
   
-  const showSettings = (event) => {
-    event.preventDefault()
-  }
+  // const showSettings = (event) => {
+  //   event.preventDefault()
+  // }
   
   const handleMenuToggle = () => {
-    setIsOpen(!isOpen)
-    console.log(isOpen)
+    setIsClosed(!isClosed)
+    console.log(isClosed)
   }
 
   React.useEffect(() => {
@@ -30,6 +30,16 @@ function NewWork() {
     getData()
   }, [])
 
+  // <Menu disableAutoFocus
+  //           width={ '100px' } isOpen={ false }
+  //           onOpen={handleMenuToggle}>
+  //           <a className="menu-item" href="/new-work">New Work</a>
+  //           <a className="menu-item" href="/portraits">Portraits</a>
+  //           <a className="menu-item" href="/sketches">Sketches</a>
+  //           <a className="menu-item" href="/news-bio">News&Biography</a>
+  //           <a onClick={showSettings} href=""></a>
+  //         </Menu>
+
 
 
   
@@ -39,17 +49,6 @@ function NewWork() {
       <div className="header">
         <div className="head-s-one">
           <div className="fa fa-bars" onClick={handleMenuToggle}></div>
-          {isOpen ?
-            <Menu>
-              <a className="menu-item" href="/new-work">New Work</a>
-              <a className="menu-item" href="/portraits">Portraits</a>
-              <a className="menu-item" href="/sketches">Sketches</a>
-              <a className="menu-item" href="/news-bio">News&Biography</a>
-              <a onClick={showSettings} href=""></a>
-            </Menu>
-            :
-            <div></div>
-          }
         </div>
         <div className="head-s-two">
           <Link to="/new-work" style={{ textDecoration: 'none', color: 'black' }}>
@@ -64,6 +63,24 @@ function NewWork() {
       </div>
       <div className="container">
         <div className="main-photo">
+          {isClosed ?
+            <div></div>
+            :
+            <div className="burger-menu">
+              <Link onClick={handleMenuToggle} to="/new-work" style={{ textDecoration: 'none', color: 'black' }}>
+                <div className="burger-item">NEW WORK</div>
+              </Link>
+              <Link onClick={handleMenuToggle} to="/portraits" style={{ textDecoration: 'none', color: 'black' }}>
+                <div className="burger-item">PORTRAITS</div>
+              </Link>
+              <Link onClick={handleMenuToggle} to="/sketches" style={{ textDecoration: 'none', color: 'black' }}>
+                <div className="burger-item">SKETCHES</div>
+              </Link>
+              <Link onClick={handleMenuToggle} to="/news-bio" style={{ textDecoration: 'none', color: 'black' }}>
+                <div className="burger-item">NEWS&BIOGRAPHY</div>
+              </Link>
+            </div>
+          }
         </div>
         <div className="picture-content">
           <div className="p-c-title">New Work</div>
