@@ -41,7 +41,7 @@ function Sketches() {
     <div className="main">
       <div className="header">
         <div className="head-s-one">
-          <div className="fa fa-bars"></div>
+          <div className="fa fa-bars" onClick={handleMenuToggle}></div>
         </div>
         <div className="head-s-two">
           <Link to="/new-work" style={{ textDecoration: 'none', color: 'black' }}>

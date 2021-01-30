@@ -2,7 +2,7 @@ import React from 'react'
 import Nav from '../common/Nav'
 import { getAllPictures } from '../../lib/api'
 import { Link } from 'react-router-dom'
-// import { slide as Menu } from 'react-burger-menu'
+import HeroCarousel from 'react-hero-carousel'
 
 
 function NewWork() {
@@ -24,8 +24,32 @@ function NewWork() {
       }
     }
     getData()
+
+    // const interval = setInterval(()=> {
+    //   const randomPicture = newWork ? newWork[Math.floor(Math.random() * filteredPictures.length)] : null
+    //   console.log(randomPicture)
+    // }, 10000)
+    // return () => clearInterval(interval)
+
   }, [])
 
+  const filteredPictures = newWork ? newWork.filter(picture => {
+    let i
+    for (i = 0; i < picture.types.length; i++) {
+      if (picture.types[i] === 1) {
+        return picture
+      } else {
+        return
+      }
+    }
+  }) : null
+
+
+
+
+  
+  
+  
   
   return (
     <div className="main">
@@ -47,7 +71,22 @@ function NewWork() {
       <div className="container">
         <div className="main-photo">
           {isClosed ?
-            <div></div>
+            <div className="main-photo-container">
+              <HeroCarousel interval={5000}>
+                <img className="carousel-image"
+                  src="http://localhost:8000/media/images/IMG_1810.jpg"
+                />
+                <img className="carousel-image"
+                  src="http://localhost:8000/media/images/IMG_8148.jpg"
+                />
+                <img className="carousel-image"
+                  src="http://localhost:8000/media/images/IMG_8471.jpg"
+                />
+                <img className="carousel-image"
+                  src="http://localhost:8000/media/images/IMG_8558.jpg"
+                />
+              </HeroCarousel>
+            </div>
             :
             <div className="burger-menu">
               <Link onClick={handleMenuToggle} to="/new-work" style={{ textDecoration: 'none', color: 'black' }}>
@@ -66,9 +105,9 @@ function NewWork() {
           }
         </div>
         <div className="picture-content">
-          <div className="p-c-title">New Work</div>
+          <div className="n-w-title">New Work</div>
           <div className="main-picture-content">
-            {newWork && newWork.map(picture => (
+            {filteredPictures && filteredPictures.map(picture => (
               <div key={picture.id} className="picture-card-container">
                 <Link to={`/pictures/${picture.id}`} style={{ textDecoration: 'none', color: 'black' }}>
                   <div className="image-container">
