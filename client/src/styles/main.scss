@@ -49,6 +49,7 @@ html {
   height: 40px;
   border-bottom: 1px solid #d9d9d9;
   margin-bottom: 40px;
+  margin-top: 10px;
 }
 
 .nav-bar-main {
@@ -190,7 +191,7 @@ html {
 }
 
 .copyright {
-  font-size: 12px;
+  font-size: 10px;
   line-height: 1.5px;
   font-family: "Lato", "helvetica neue", helvetica, sans-serif;
   color: #555555;
@@ -287,17 +288,29 @@ html {
   padding-bottom: 30px;
   padding-top: 30px;
   margin-top: 20px;
+  font-family: "Lato", "helvetica neue", helvetica, sans-serif;
 }
 
 .p-show-section-two {
   border-bottom: 1px solid #d9d9d9;
   padding-bottom: 30px;
   padding-top: 30px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .p-show-section-three {
   padding-bottom: 30px;
   padding-top: 30px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.p-show-enquire {
+  color: white;
+  background-color: #222222;
+  width: 162px;
+  padding: 2px;
+  border-radius: 5px;
+  margin-top: 5px;
 }
 
 

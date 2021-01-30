@@ -78,6 +78,9 @@ function PaintingShow() {
             </div>
             <div className="p-show-section-three">
               <div>{painting.status}</div>
+              <Link to="/enquire-form" style={{ textDecoration: 'none', color: 'black' }}>
+                <div className="p-show-enquire">Enquire about this work</div>
+              </Link>
             </div>
           </div>
         </div>
