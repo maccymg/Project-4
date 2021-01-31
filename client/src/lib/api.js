@@ -9,3 +9,7 @@ export function getAllPictures() {
 export function getSinglePicture(id) {
   return axios.get(`${baseUrl}/pictures/${id}`)
 }
+
+export function createForm(formdata) {
+  return axios.post(`${baseUrl}/enquire/`, formdata)
+}

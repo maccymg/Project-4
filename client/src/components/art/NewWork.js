@@ -25,12 +25,6 @@ function NewWork() {
     }
     getData()
 
-    // const interval = setInterval(()=> {
-    //   const randomPicture = newWork ? newWork[Math.floor(Math.random() * filteredPictures.length)] : null
-    //   console.log(randomPicture)
-    // }, 10000)
-    // return () => clearInterval(interval)
-
   }, [])
 
   const filteredPictures = newWork ? newWork.filter(picture => {
@@ -45,12 +39,6 @@ function NewWork() {
   }) : null
 
 
-
-
-  
-  
-  
-  
   return (
     <div className="main">
       <div className="header">
@@ -72,7 +60,7 @@ function NewWork() {
         <div className="main-photo">
           {isClosed ?
             <div className="main-photo-container">
-              <HeroCarousel interval={5000}>
+              <HeroCarousel interval={4000}>
                 <img className="carousel-image"
                   src="http://localhost:8000/media/images/IMG_1810.jpg"
                 />

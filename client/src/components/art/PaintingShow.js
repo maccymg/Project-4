@@ -7,6 +7,7 @@ function PaintingShow() {
   const [painting, setPainting] = React.useState(null)
   const { id } = useParams()
   const [isClosed, setIsClosed] = React.useState(true)
+  const [hasPrice, setHasPrice] = React.useState(false)
 
 
   React.useEffect(() => {
@@ -14,6 +15,12 @@ function PaintingShow() {
       try {
         const { data } = await getSinglePicture(id)
         setPainting(data)
+        console.log(data.status)
+        if (data.status.includes('£')) {
+          setHasPrice(true)
+        } else {
+          return
+        }
       } catch (err) {
         console.log(err)
       }
@@ -24,6 +31,8 @@ function PaintingShow() {
   const handleMenuToggle = () => {
     setIsClosed(!isClosed)
   }
+
+
 
   return (
     <div className="main">
@@ -76,12 +85,16 @@ function PaintingShow() {
               <div>{painting.style}</div>
               <div>{painting.size}</div>
             </div>
-            <div className="p-show-section-three">
-              <div>{painting.status}</div>
-              <Link to="/enquire-form" style={{ textDecoration: 'none', color: 'black' }}>
-                <div className="p-show-enquire">Enquire about this work</div>
-              </Link>
-            </div>
+            {hasPrice ?
+              <div className="p-show-section-three">
+                <div>{painting.status}</div>
+                <Link to="/enquire-form" style={{ textDecoration: 'none', color: 'black' }}>
+                  <div className="p-show-enquire">Enquire about this work</div>
+                </Link>
+              </div>
+              :
+              <div></div>
+            }
           </div>
         </div>
         :

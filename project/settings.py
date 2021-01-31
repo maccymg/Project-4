@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'pictures',
     'picture_types',
+    'enquire_forms',
 ]
 
 MIDDLEWARE = [
@@ -123,3 +124,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
+
