@@ -1,6 +1,8 @@
 import React from 'react'
 import Nav from '../common/Nav'
 import { Link } from 'react-router-dom'
+import Header from '../common/Header'
+import Footer from '../common/Footer'
 
 function NewsBio() {
   const [isClosed, setIsClosed] = React.useState(true)
@@ -15,12 +17,7 @@ function NewsBio() {
         <div className="head-s-one">
           <div className="fa fa-bars" onClick={handleMenuToggle}></div>
         </div>
-        <div className="head-s-two">
-          <Link to="/new-work" style={{ textDecoration: 'none', color: 'black' }}>
-            <p className="title-name">PUFF MORGAN-GILES</p>
-          </Link>
-        </div>
-        <div className="head-s-one"></div>
+        <Header />
       </div>
       {isClosed ?
         <div></div>
@@ -50,39 +47,31 @@ function NewsBio() {
       </div>
       <div className="bio-main">
         <div className="bio-photo-container">
-          <div className="bio-photo"></div>
+          <img className="bio-photo"
+            src="http://localhost:8000/media/images/Bio-image.jpg"
+          />
         </div>
         <div className="bio-info-container">
           <div className="bio-section-one">
             <div className="p-c-title">News & Biography</div>
-            <p>If youre visiting this page, youre likely here because youre searching for a random sentence. Sometimes a random word just isnt enough, and that is where the random sentence generator</p>
-            <p>If youre visiting this page, youre likely here because youre searching for a random sentence. Sometimes a random word just isnt enough, and that is where the random sentence generator</p>
-            <p>If youre visiting this page, youre likely here because youre searching for a random sentence. Sometimes a random word just isnt enough, and that is where the random sentence generator</p>
+            <p>Puff has painted all her life, she studied at Chelsea School of Art and Winchester School of Art.</p>
+            <p>More recently she has done a class with Jamie Rowtley and Nicholas Beere working with oils at Sarum Studio.</p>
+            <p>She is currently working as a teacher giving online classes for ??????? and splits her time between her teaching and her own work.</p>
           </div>
           <div className="bio-section-two-three">
             <div className="small-title">Biography</div>
-            <p>If youre visiting this page, youre likely here because</p>
-            <p>If youre visiting this page, youre likely here because</p>
-            <p>If youre visiting this page, youre likely here because</p>
+            <p>Chelsea School of Art</p>
+            <p>Winchester School of Art</p>
+            <p>Blazingrad degree</p>
           </div>
           <div className="bio-section-two-three">
             <div className="small-title">Exhibitions</div>
-            <p>If youre visiting this page, youre likely here because</p>
-            <p>If youre visiting this page, youre likely here because</p>
-            <p>If youre visiting this page, youre likely here because</p>
+            <p>Josie Eastwood Fine Art</p>
+            <p>Private Exhibitions</p>
           </div>
         </div>
       </div>
-      <div className="footer">
-        <div className="footer-icons">
-          <div className="fa fa-facebook icon"></div>
-          <div className="fa fa-twitter icon"></div>
-          <div className="fa fa-instagram icon"></div>
-        </div>
-        <div className="footer-copyright">
-          <p className="copyright">© Copyright 2021 Puff Morgan-Giles Art. All Rights Reserved.</p>
-        </div>
-      </div>
+      <Footer />
     </div>
   )
 }

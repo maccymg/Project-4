@@ -3,6 +3,8 @@ import Nav from '../common/Nav'
 import { getAllPictures } from '../../lib/api'
 import { Link } from 'react-router-dom'
 import HeroCarousel from 'react-hero-carousel'
+import Header from '../common/Header'
+import Footer from '../common/Footer'
 
 
 function NewWork() {
@@ -46,13 +48,7 @@ function NewWork() {
         <div className="head-s-one">
           <div className="fa fa-bars" onClick={handleMenuToggle}></div>
         </div>
-        <div className="head-s-two">
-          <Link to="/new-work" style={{ textDecoration: 'none', color: 'black' }}>
-            <p className="title-name">PUFF MORGAN-GILES</p>
-          </Link>
-        </div>
-        <div className="head-s-one">
-        </div>
+        <Header />
       </div>
       <div className="nav-bar-container">
         <Nav />
@@ -115,16 +111,7 @@ function NewWork() {
             ))}
           </div>
         </div>
-        <div className="footer">
-          <div className="footer-icons">
-            <div className="fa fa-facebook icon"></div>
-            <div className="fa fa-twitter icon"></div>
-            <div className="fa fa-instagram icon"></div>
-          </div>
-          <div className="footer-copyright">
-            <p className="copyright">© Copyright 2021 Puff Morgan-Giles Art. All Rights Reserved.</p>
-          </div>
-        </div>
+        <Footer />
       </div>
     </div>
   )

@@ -2,6 +2,8 @@ import React from 'react'
 import { getSinglePicture } from '../../lib/api'
 import { useParams, Link } from 'react-router-dom'
 import Nav from '../common/Nav'
+import Header from '../common/Header'
+import Footer from '../common/Footer'
 
 function PaintingShow() {
   const [painting, setPainting] = React.useState(null)
@@ -39,12 +41,7 @@ function PaintingShow() {
         <div className="head-s-one">
           <div className="fa fa-bars" onClick={handleMenuToggle}></div>
         </div>
-        <div className="head-s-two">
-          <Link to="/new-work" style={{ textDecoration: 'none', color: 'black' }}>
-            <p className="title-name">PUFF MORGAN-GILES</p>
-          </Link>
-        </div>
-        <div className="head-s-one"></div>
+        <Header />
       </div>
       {isClosed ?
         <div></div>
@@ -95,23 +92,14 @@ function PaintingShow() {
                 </Link>
               </div>
               :
-              <div></div>
+              <div className="no-price"></div>
             }
           </div>
         </div>
         :
         <div>Loading ...</div>
       }
-      <div className="footer">
-        <div className="footer-icons">
-          <div className="fa fa-facebook icon"></div>
-          <div className="fa fa-twitter icon"></div>
-          <div className="fa fa-instagram icon"></div>
-        </div>
-        <div className="footer-copyright">
-          <p className="copyright">© Copyright 2021 Puff Morgan-Giles Art. All Rights Reserved.</p>
-        </div>
-      </div>
+      <Footer />
     </div>
   )
 }

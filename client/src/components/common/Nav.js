@@ -18,7 +18,7 @@ function Nav() {
         <div className="nav-bar-item">SKETCHES</div>
       </Link>
       <Link to="/news-bio" style={{ textDecoration: 'none', color: 'black' }}>
-        <div className="last-nav-bar-item">NEWS&BIOGRAPHY</div>
+        <div className="last-nav-bar-item">NEWS & BIOGRAPHY</div>
       </Link>
     </div>
   )
