@@ -3,8 +3,8 @@ import Nav from '../common/Nav'
 import { Link } from 'react-router-dom'
 import { getAllPictures } from '../../lib/api'
 
-function Portraits() {
-  const [newPortraits, setNewPortraits] = React.useState(null)
+function PreviousWork() {
+  const [previousWork, setPreviousWork] = React.useState(null)
   const [isClosed, setIsClosed] = React.useState(true)
   
 
@@ -12,7 +12,7 @@ function Portraits() {
     const getData = async () => {
       try {
         const { data } = await getAllPictures()
-        setNewPortraits(data)
+        setPreviousWork(data)
       } catch (err) {
         console.log(err)
       }
@@ -24,10 +24,10 @@ function Portraits() {
     setIsClosed(!isClosed)
   }
 
-  const filteredPictures = newPortraits ? newPortraits.filter(sketch => {
+  const filteredPictures = previousWork ? previousWork.filter(sketch => {
     let i
     for (i = 0; i < sketch.types.length; i++) {
-      if (sketch.types[i] === 2) {
+      if (sketch.types[i] === 4) {
         return sketch
       } else {
         return
@@ -76,17 +76,20 @@ function Portraits() {
       }
       <div className="container">
         <div className="picture-content">
-          <div className="p-c-title">Portraits</div>
+          <div className="p-c-title">Past Work</div>
           <div className="main-picture-content">
             {filteredPictures && filteredPictures.map(picture => (
               <div key={picture.id} className="picture-card-container">
-                <div className="image-container">
-                  <img src={`http://localhost:8000${picture.image}`} className="images"></img>
-                </div>
-                <div className="picture-card-text">
-                  <div className="picture-card-text-name">{picture.name}</div>
-                  <div className="picture-card-text-style">{picture.size}</div>
-                </div>
+                <Link to={`/pictures/${picture.id}`} style={{ textDecoration: 'none', color: 'black' }}>
+                  <div className="image-container">
+                    <img src={`http://localhost:8000${picture.image}`} className="images"></img>
+                  </div>
+                  <div className="picture-card-text">
+                    <div className="picture-card-text-name">{picture.name}</div>
+                    <div className="picture-card-text-style">{picture.size}</div>
+                    <div className="picture-card-text-price">{picture.status}</div>
+                  </div>
+                </Link>
               </div>
             ))}
           </div>
@@ -106,4 +109,4 @@ function Portraits() {
   )
 }
 
-export default Portraits
+export default PreviousWork

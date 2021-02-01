@@ -59,7 +59,7 @@ function EnquireForm() {
       {isClosed ?
         <div></div>
         :
-        <div className="main-photo-burger">
+        <div className="main-photo-burger-form">
           <div className="burger-menu">
             <Link onClick={handleMenuToggle} to="/new-work" style={{ textDecoration: 'none', color: 'black' }}>
               <div className="burger-item">NEW WORK</div>

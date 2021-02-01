@@ -8,6 +8,9 @@ function Nav() {
       <Link to="/new-work" style={{ textDecoration: 'none', color: 'black' }}>
         <div className="nav-bar-item">NEW WORK</div>
       </Link>
+      <Link to="/previous-work" style={{ textDecoration: 'none', color: 'black' }}>
+        <div className="nav-bar-item">PAST WORK</div>
+      </Link>
       <Link to="/portraits" style={{ textDecoration: 'none', color: 'black' }}>
         <div className="nav-bar-item">PORTRAITS</div>
       </Link>

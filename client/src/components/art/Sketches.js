@@ -45,7 +45,7 @@ function Sketches() {
         </div>
         <div className="head-s-two">
           <Link to="/new-work" style={{ textDecoration: 'none', color: 'black' }}>
-            <p className="title-name">PUFF MORGAN-GILES</p>
+            <p className="title-name">PUFF MORGAN GILES</p>
           </Link>
         </div>
         <div className="head-s-one"></div>
@@ -60,6 +60,9 @@ function Sketches() {
           <div className="burger-menu">
             <Link onClick={handleMenuToggle} to="/new-work" style={{ textDecoration: 'none', color: 'black' }}>
               <div className="burger-item">NEW WORK</div>
+            </Link>
+            <Link onClick={handleMenuToggle} to="/previous-work" style={{ textDecoration: 'none', color: 'black' }}>
+              <div className="burger-item">PAST WORK</div>
             </Link>
             <Link onClick={handleMenuToggle} to="/portraits" style={{ textDecoration: 'none', color: 'black' }}>
               <div className="burger-item">PORTRAITS</div>

@@ -30,6 +30,9 @@ function NewsBio() {
             <Link onClick={handleMenuToggle} to="/new-work" style={{ textDecoration: 'none', color: 'black' }}>
               <div className="burger-item">NEW WORK</div>
             </Link>
+            <Link onClick={handleMenuToggle} to="/previous-work" style={{ textDecoration: 'none', color: 'black' }}>
+              <div className="burger-item">PAST WORK</div>
+            </Link>
             <Link onClick={handleMenuToggle} to="/portraits" style={{ textDecoration: 'none', color: 'black' }}>
               <div className="burger-item">PORTRAITS</div>
             </Link>

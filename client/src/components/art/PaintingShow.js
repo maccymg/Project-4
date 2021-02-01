@@ -15,7 +15,6 @@ function PaintingShow() {
       try {
         const { data } = await getSinglePicture(id)
         setPainting(data)
-        console.log(data.status)
         if (data.status.includes('£')) {
           setHasPrice(true)
         } else {
@@ -54,6 +53,9 @@ function PaintingShow() {
           <div className="burger-menu">
             <Link onClick={handleMenuToggle} to="/new-work" style={{ textDecoration: 'none', color: 'black' }}>
               <div className="burger-item">NEW WORK</div>
+            </Link>
+            <Link onClick={handleMenuToggle} to="/previous-work" style={{ textDecoration: 'none', color: 'black' }}>
+              <div className="burger-item">PAST WORK</div>
             </Link>
             <Link onClick={handleMenuToggle} to="/portraits" style={{ textDecoration: 'none', color: 'black' }}>
               <div className="burger-item">PORTRAITS</div>
