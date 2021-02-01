@@ -8,6 +8,7 @@ import Sketches from './components/art/Sketches'
 import NewsBio from './components/art/NewsBio'
 import PaintingShow from './components/art/PaintingShow'
 import EnquireForm from './components/common/EnquireForm'
+import ThankYou from './components/common/ThankYou'
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path="/news-bio" component={NewsBio} />
         <Route path="/pictures/:id" component={PaintingShow} />
         <Route path="/enquire-form" component={EnquireForm} />
+        <Route path="/thank-you" component={ThankYou} />
       </Switch>
     </BrowserRouter>
   )

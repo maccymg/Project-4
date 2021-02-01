@@ -3,10 +3,8 @@ from .serializers.common import FormSerializer
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-from rest_framework.permissions import AllowAny
 
 class FormSendView(APIView):
-    permission_classes = (AllowAny, )
 
     def post(self, request):
         form_to_create = FormSerializer(data=request.data)

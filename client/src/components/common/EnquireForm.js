@@ -24,7 +24,7 @@ function EnquireForm() {
     try {
       const { data } = await createForm(formdata)
       console.log(data)
-      history.push('/new-work/')
+      history.push('/thank-you')
     } catch (err) {
       // setErrors(err.response.data.errors)
       console.log(err)
