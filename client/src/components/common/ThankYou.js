@@ -48,7 +48,8 @@ function ThankYou() {
         </div>
       }
       <div className="thank-you-container">
-        <div className="thank-you-message">Thank you for your message, I will get back to you as soon as possible!</div>
+        <div className="thank-you-message">Thank you for your message,</div>
+        <div className="thank-you-message">I will get back to you as soon as possible!</div>
       </div>
       <Footer />
     </div>

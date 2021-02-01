@@ -9,9 +9,17 @@ import Footer from '../common/Footer'
 function EnquireForm() {
   const history = useHistory()
   const [isClosed, setIsClosed] = React.useState(true)
-  // const [isError, setErrors] = React.useState(false)
+  const [isError, setErrors] = React.useState(false)
 
   const [formdata, setFormdata] = React.useState({
+    full_name: '',
+    email: '',
+    phone_number: '',
+    enquiring_about: '',
+    message: ''
+  })
+
+  const [errordata, setErrordata] = React.useState({
     full_name: '',
     email: '',
     phone_number: '',
@@ -26,20 +34,23 @@ function EnquireForm() {
       console.log(data)
       history.push('/thank-you')
     } catch (err) {
-      // setErrors(err.response.data.errors)
-      console.log(err)
+      setErrors(true)
+      setErrordata(err.response.data)
     }
   }
 
   const handleChange = event => {
     const value = event.target.value
     setFormdata({ ...formdata, [event.target.name]: value })
-    // setIsError(false)
+    setErrors(false)
   }
 
   const handleMenuToggle = () => {
     setIsClosed(!isClosed)
   }
+
+  console.log(isError)
+
 
 
   return (
@@ -80,7 +91,7 @@ function EnquireForm() {
             <label className="label">
               <input
                 className="input"
-                placeholder="Full Name"
+                placeholder={!isError ? 'Full Name' : errordata.full_name }
                 onChange={handleChange}
                 name="full_name"
                 value={formdata.full_name}
@@ -91,7 +102,7 @@ function EnquireForm() {
             <label className="label">
               <input
                 className="input"
-                placeholder="Email"
+                placeholder={!isError ? 'Email' : errordata.email }
                 onChange={handleChange}
                 name="email"
                 value={formdata.email}
@@ -102,7 +113,7 @@ function EnquireForm() {
             <label className="label">
               <input
                 className="input"
-                placeholder="Phone Number"
+                placeholder={!isError ? 'Phone Number' : errordata.phone_number}
                 onChange={handleChange}
                 name="phone_number"
                 value={formdata.phone_number}
@@ -113,7 +124,7 @@ function EnquireForm() {
             <label className="label">
               <input
                 className="input"
-                placeholder="Enquiring About"
+                placeholder={!isError ? 'Enquiring About' : errordata.enquiring_about}
                 onChange={handleChange}
                 name="enquiring_about"
                 value={formdata.enquiring_about}
@@ -124,7 +135,7 @@ function EnquireForm() {
             <label className="label">
               <textarea
                 className="text-area"
-                placeholder="Message"
+                placeholder={!isError ? 'Message' : errordata.message }
                 onChange={handleChange}
                 name="message"
                 value={formdata.message}

@@ -6,7 +6,7 @@ function Header() {
   return (
     <div className="header">
       <div className="head-s-two">
-        <Link to="/new-work" style={{ textDecoration: 'none', color: 'black' }}>
+        <Link to="/" style={{ textDecoration: 'none', color: 'black' }}>
           <p className="title-name">PUFF MORGAN GILES</p>
         </Link>
       </div>

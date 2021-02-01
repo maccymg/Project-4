@@ -5,7 +5,7 @@ function Nav() {
 
   return (
     <div className="nav-bar-main">
-      <Link to="/new-work" style={{ textDecoration: 'none', color: 'black' }}>
+      <Link to="/" style={{ textDecoration: 'none', color: 'black' }}>
         <div className="nav-bar-item">NEW WORK</div>
       </Link>
       <Link to="/previous-work" style={{ textDecoration: 'none', color: 'black' }}>

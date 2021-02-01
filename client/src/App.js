@@ -15,7 +15,7 @@ function App() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/new-work" component={NewWork} />
+        <Route exact path="/" component={NewWork} />
         <Route path="/previous-work" component={PreviousWork} />
         <Route path="/portraits" component={Portraits} />
         <Route path="/sketches" component={Sketches} />
