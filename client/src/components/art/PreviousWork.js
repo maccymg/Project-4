@@ -28,11 +28,11 @@ function PreviousWork() {
 
   const filteredPictures = previousWork ? previousWork.filter(sketch => {
     let i
-    for (i = 0; i < sketch.types.length; i++) {
+    for (i = 0; i < sketch.types.length;) {
       if (sketch.types[i] === 4) {
         return sketch
       } else {
-        return
+        i++
       }
     }
   }) : null
@@ -83,7 +83,7 @@ function PreviousWork() {
                   </div>
                   <div className="picture-card-text">
                     <div className="picture-card-text-name">{picture.name}</div>
-                    <div className="picture-card-text-style">{picture.size}</div>
+                    <div className="picture-card-text-style">{`${picture.style}, ${picture.size}`}</div>
                     <div className="picture-card-text-price">{picture.status}</div>
                   </div>
                 </Link>

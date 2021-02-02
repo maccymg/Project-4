@@ -28,11 +28,11 @@ function Portraits() {
 
   const filteredPictures = newPortraits ? newPortraits.filter(sketch => {
     let i
-    for (i = 0; i < sketch.types.length; i++) {
+    for (i = 0; i < sketch.types.length;) {
       if (sketch.types[i] === 2) {
         return sketch
       } else {
-        return
+        i++
       }
     }
   }) : null

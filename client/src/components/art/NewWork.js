@@ -31,11 +31,11 @@ function NewWork() {
 
   const filteredPictures = newWork ? newWork.filter(picture => {
     let i
-    for (i = 0; i < picture.types.length; i++) {
+    for (i = 0; i < picture.types.length;) {
       if (picture.types[i] === 1) {
         return picture
       } else {
-        return
+        i++
       }
     }
   }) : null
@@ -62,13 +62,16 @@ function NewWork() {
                   src="http://localhost:8000/media/images/IMG_1810.jpg"
                 />
                 <img className="carousel-image"
-                  src="http://localhost:8000/media/images/IMG_8148.jpg"
+                  src="http://localhost:8000/media/images/IMG_2419.PNG"
                 />
                 <img className="carousel-image"
-                  src="http://localhost:8000/media/images/IMG_8471.jpg"
+                  src="http://localhost:8000/media/images/IMG_0230.jpg"
                 />
                 <img className="carousel-image"
-                  src="http://localhost:8000/media/images/IMG_8558.jpg"
+                  src="http://localhost:8000/media/images/IMG_8471_p611r2t.jpg"
+                />
+                <img className="carousel-image"
+                  src="http://localhost:8000/media/images/IMG_2831.jpg"
                 />
               </HeroCarousel>
             </div>
