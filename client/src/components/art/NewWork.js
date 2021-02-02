@@ -59,19 +59,19 @@ function NewWork() {
             <div className="main-photo-container">
               <HeroCarousel interval={4000}>
                 <img className="carousel-image"
-                  src="http://localhost:8000/media/images/IMG_1810.jpg"
+                  src="http://localhost:8000/media/images/IMG_display-image-one.jpg"
                 />
                 <img className="carousel-image"
-                  src="http://localhost:8000/media/images/IMG_2419.PNG"
+                  src="http://localhost:8000/media/images/IMG_display-image-two.jpg"
                 />
                 <img className="carousel-image"
-                  src="http://localhost:8000/media/images/IMG_0230.jpg"
+                  src="http://localhost:8000/media/images/IMG_display-image-three.jpg"
                 />
                 <img className="carousel-image"
-                  src="http://localhost:8000/media/images/IMG_8471_p611r2t.jpg"
+                  src="http://localhost:8000/media/images/IMG_display-image-four.jpg"
                 />
                 <img className="carousel-image"
-                  src="http://localhost:8000/media/images/IMG_2831.jpg"
+                  src="http://localhost:8000/media/images/IMG_display-image-five.jpg"
                 />
               </HeroCarousel>
             </div>
