@@ -54,15 +54,15 @@ function NewsBio() {
         <div className="bio-info-container">
           <div className="bio-section-one">
             <div className="p-c-title">News & Biography</div>
-            <p>Puff has painted all her life, she studied at Chelsea School of Art and Winchester School of Art.</p>
-            <p>More recently she has done a class with Jamie Rowtley and Nicholas Beere working with oils at Sarum Studio.</p>
-            <p>She is currently working as a teacher giving online classes for ??????? and splits her time between her teaching and her own work.</p>
+            <p>Puff has painted all her life, she studied at Chelsea School of Art and Winchester School of Art,</p>
+            <p>also with Jamie Rowtley and Nicholas Beere.</p>
+            <p>She is currently teaching foundation at <a href='https://www.collegearts.co.uk/'>College Arts Hampshire</a>, and divides her time between her teaching and her own work.</p>
           </div>
           <div className="bio-section-two-three">
             <div className="small-title">Biography</div>
             <p>Chelsea School of Art</p>
             <p>Winchester School of Art</p>
-            <p>Blazingrad degree</p>
+            <p>2017 - Present: Teaching Foundation at College Arts, Hampshire</p>
           </div>
           <div className="bio-section-two-three">
             <div className="small-title">Exhibitions</div>

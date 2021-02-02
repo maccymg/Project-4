@@ -91,56 +91,81 @@ function EnquireForm() {
             <label className="label">
               <input
                 className="input"
-                placeholder={!isError ? 'Full Name' : errordata.full_name }
+                placeholder="Full name"
                 onChange={handleChange}
                 name="full_name"
                 value={formdata.full_name}
               />
             </label>
+            {isError ?
+              <div className="error-message">*{errordata.full_name}</div>
+              :
+              <div className="error-message"></div>
+            }
           </div>
           <div className="form-group">
             <label className="label">
               <input
                 className="input"
-                placeholder={!isError ? 'Email' : errordata.email }
+                placeholder="Email"
                 onChange={handleChange}
                 name="email"
                 value={formdata.email}
               />
             </label>
+            {isError ?
+              <div className="error-message">*{errordata.email}</div>
+              :
+              <div className="error-message"></div>
+            }
           </div>
           <div className="form-group">
             <label className="label">
               <input
                 className="input"
-                placeholder={!isError ? 'Phone Number' : errordata.phone_number}
+                placeholder="Phone number"
                 onChange={handleChange}
                 name="phone_number"
                 value={formdata.phone_number}
               />
             </label>
+            {isError ?
+              <div className="error-message">*{errordata.phone_number}</div>
+              :
+              <div className="error-message"></div>
+            }
           </div>
           <div className="form-group">
             <label className="label">
               <input
                 className="input"
-                placeholder={!isError ? 'Enquiring About' : errordata.enquiring_about}
+                placeholder="Enquiring about"
                 onChange={handleChange}
                 name="enquiring_about"
                 value={formdata.enquiring_about}
               />
             </label>
+            {isError ?
+              <div className="error-message">*{errordata.enquiring_about}</div>
+              :
+              <div className="error-message"></div>
+            }
           </div>
           <div className="form-group">
             <label className="label">
               <textarea
                 className="text-area"
-                placeholder={!isError ? 'Message' : errordata.message }
+                placeholder="Message"
                 onChange={handleChange}
                 name="message"
                 value={formdata.message}
               />
             </label>
+            {isError ?
+              <div className="error-message">*{errordata.message}</div>
+              :
+              <div className="error-message"></div>
+            }
           </div>
           <div className="form-footer">
             <button type="submit" className="button">Send Form</button>
