@@ -40,6 +40,17 @@ function NewWork() {
     }
   }) : null
 
+  const carouselPictures = newWork ? newWork.filter(photo => {
+    let i
+    for (i = 0; i < photo.types.length;) {
+      if (photo.types[i] === 5) {
+        return photo
+      } else {
+        i++
+      }
+    }
+  }) : null
+
 
 
   return (
@@ -57,23 +68,30 @@ function NewWork() {
         <div className="main-photo">
           {isClosed ?
             <div className="main-photo-container">
-              <HeroCarousel interval={4000}>
-                <img className="carousel-image"
-                  src="http://localhost:8000/media/images/IMG_display-image-one.jpg"
-                />
-                <img className="carousel-image"
-                  src="http://localhost:8000/media/images/IMG_display-image-two.jpg"
-                />
-                <img className="carousel-image"
-                  src="http://localhost:8000/media/images/IMG_display-image-three.jpg"
-                />
-                <img className="carousel-image"
-                  src="http://localhost:8000/media/images/IMG_display-image-four.jpg"
-                />
-                <img className="carousel-image"
-                  src="http://localhost:8000/media/images/IMG_display-image-five.jpg"
-                />
-              </HeroCarousel>
+              {carouselPictures && carouselPictures.map(photo => (
+                console.log(photo)
+              ))}
+              {carouselPictures ?
+                <HeroCarousel interval={4000}>
+                  <img className="carousel-image"
+                    src={`http://localhost:8000${carouselPictures[0].image}`}
+                  />
+                  <img className="carousel-image"
+                    src={`http://localhost:8000${carouselPictures[1].image}`}
+                  />
+                  <img className="carousel-image"
+                    src={`http://localhost:8000${carouselPictures[2].image}`}
+                  />
+                  <img className="carousel-image"
+                    src={`http://localhost:8000${carouselPictures[3].image}`}
+                  />
+                  <img className="carousel-image"
+                    src={`http://localhost:8000${carouselPictures[4].image}`}
+                  />
+                </HeroCarousel>
+                :
+                <div></div>
+              }
             </div>
             :
             <div className="burger-menu">
