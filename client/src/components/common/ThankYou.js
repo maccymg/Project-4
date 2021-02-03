@@ -29,7 +29,7 @@ function ThankYou() {
         :
         <div className="main-photo-burger">
           <div className="burger-menu">
-            <Link onClick={handleMenuToggle} to="/new-work" style={{ textDecoration: 'none', color: 'black' }}>
+            <Link onClick={handleMenuToggle} to="/" style={{ textDecoration: 'none', color: 'black' }}>
               <div className="burger-item">NEW WORK</div>
             </Link>
             <Link onClick={handleMenuToggle} to="/previous-work" style={{ textDecoration: 'none', color: 'black' }}>

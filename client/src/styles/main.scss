@@ -292,7 +292,7 @@ html {
   flex-direction: column;
   color: #222222;
   justify-content: space-evenly;
-  margin-left: 40px;
+  margin-left: 50px;
 }
 
 .p-show-section-one {
@@ -540,6 +540,10 @@ html {
   .bio-photo {
     max-width: 400px;
     max-height: 600px;
+  }
+
+  .p-show-info-container {
+    margin-left: 30px;
   }
 
 }

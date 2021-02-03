@@ -9,7 +9,6 @@ import Footer from '../common/Footer'
 function EnquireForm() {
   const history = useHistory()
   const [isClosed, setIsClosed] = React.useState(true)
-  const [isError, setErrors] = React.useState(false)
 
   const [formdata, setFormdata] = React.useState({
     full_name: '',
@@ -34,7 +33,6 @@ function EnquireForm() {
       console.log(data)
       history.push('/thank-you')
     } catch (err) {
-      setErrors(true)
       setErrordata(err.response.data)
     }
   }
@@ -42,14 +40,13 @@ function EnquireForm() {
   const handleChange = event => {
     const value = event.target.value
     setFormdata({ ...formdata, [event.target.name]: value })
-    setErrors(false)
+    setErrordata('')
   }
 
   const handleMenuToggle = () => {
     setIsClosed(!isClosed)
   }
 
-  console.log(isError)
 
 
 
@@ -69,8 +66,11 @@ function EnquireForm() {
         :
         <div className="main-photo-burger-form">
           <div className="burger-menu">
-            <Link onClick={handleMenuToggle} to="/new-work" style={{ textDecoration: 'none', color: 'black' }}>
+            <Link onClick={handleMenuToggle} to="/" style={{ textDecoration: 'none', color: 'black' }}>
               <div className="burger-item">NEW WORK</div>
+            </Link>
+            <Link onClick={handleMenuToggle} to="/previous-work" style={{ textDecoration: 'none', color: 'black' }}>
+              <div className="burger-item">PAST WORK</div>
             </Link>
             <Link onClick={handleMenuToggle} to="/portraits" style={{ textDecoration: 'none', color: 'black' }}>
               <div className="burger-item">PORTRAITS</div>
@@ -97,8 +97,8 @@ function EnquireForm() {
                 value={formdata.full_name}
               />
             </label>
-            {isError ?
-              <div className="error-message">*{errordata.full_name}</div>
+            {errordata.full_name ?
+              <div className="error-message">{`*${errordata.full_name}`}</div>
               :
               <div className="error-message"></div>
             }
@@ -113,7 +113,7 @@ function EnquireForm() {
                 value={formdata.email}
               />
             </label>
-            {isError ?
+            {errordata.email ?
               <div className="error-message">*{errordata.email}</div>
               :
               <div className="error-message"></div>
@@ -129,7 +129,7 @@ function EnquireForm() {
                 value={formdata.phone_number}
               />
             </label>
-            {isError ?
+            {errordata.phone_number ?
               <div className="error-message">*{errordata.phone_number}</div>
               :
               <div className="error-message"></div>
@@ -145,7 +145,7 @@ function EnquireForm() {
                 value={formdata.enquiring_about}
               />
             </label>
-            {isError ?
+            {errordata.enquiring_about ?
               <div className="error-message">*{errordata.enquiring_about}</div>
               :
               <div className="error-message"></div>
@@ -161,7 +161,7 @@ function EnquireForm() {
                 value={formdata.message}
               />
             </label>
-            {isError ?
+            {errordata.message ?
               <div className="error-message">*{errordata.message}</div>
               :
               <div className="error-message"></div>
