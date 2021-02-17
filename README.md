@@ -1,1 +1,1 @@
-### Click readme-and-app-pictures for project readme
+### Click readme-and-pictures for project readme
