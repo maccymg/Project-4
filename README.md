@@ -30,7 +30,7 @@ In the client folder, yarn add:
 - react-router-dom
 
 
-## General approach took:
+## General approach taken:
 
 This project gave us the choice of working solo or in groups. Having initially wanted to work on a group project so I could practice my git repo's the majority of the class wanted to do solo projects and therefore I couldn't find anyone to pair with. I started drafting ideas and came up with the thought of making an art website for my mum who teaches art. This seemed like a great idea as I would be able to work with her in deciding how she wanted it to look and what it did and give me practice with interpreting someone else's ideas and delivering something that she would like.
 
@@ -82,3 +82,7 @@ Doing a more simple backend as I had no need for users, while limiting the scope
 Major hurdles were managing lots of different sized images and displaying them it lost of changing sizes, focusing on giving the admin compelte control over the content and future content of the app.
 
 In terms of unsolved problems, having the form request being sent to an email adress rather than the admin site, displaying different styles while mapping.
+
+### Key Learning
+
+Key learning included python, postgres and coding for a client.
