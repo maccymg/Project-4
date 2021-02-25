@@ -72,10 +72,9 @@ class FormSendView(APIView):
 
 Having spend a bit of time sorting out the error handling I decided to move logic out into seperate components. This was becasue a lot of the pages had identical code and so I moved the header and footer into its own component lke I had done for the nav earlier on. After doing this I wanted to give the admin the ability to change the carousel photos but wondered how I could do this as I had hardcoded each image in. Having explored the ability to delete image from the files and name the new ones the same which didn't seem a good idea I came up with the idea of adding a carousel type and displaying these the same way as the other types throught filtering. Thus the decicion to use picture_types in this way turned out to be a very good idea. After completing this I set about putting finishing touch on the styling and hooking up my mums instagram and related teaching. I also managed to convert her writing into her own font so that I could use it for her page.
 
+### Wins
 
 Doing a more simple backend as I had no need for users, while limiting the scope of my project, gave me the time needed to really pollish the look of the app. This was always going to be the most important function of an art based website and turned out to very useful as before I think my projects were lacking that pollished look and it was good to get more practice on this and deliver to a high standard. Also working with a sort of client throught the processs was also a very good learning experence.
-
-
 
 ### Major hurdles and unsolved problems
 
@@ -86,3 +85,7 @@ In terms of unsolved problems, having the form request being sent to an email ad
 ### Key Learning
 
 Key learning included python, postgres and coding for a client.
+
+### Future Features
+
+Future features include maintaing the app for my mum should she need extra categories for new works or exhibitions. I have enabled her to add and remove content throught the admin page. 
