@@ -36,7 +36,26 @@ This project gave us the choice of working solo or in groups. Having initially w
 
 ### Back End
 
-After drawing out a diagram of the relationships I would need I realised that this wasn't going to be the most complicated app in terms of the back-end, however the importance of its finish would be key. Starting on the backend I began to build out the first app, pictures. The challenge here was adding the ability to allow the admin to add pictures from the page and then add them to the images folder. Having done this I began adding the picture_types. The plan surrounding these was to have the ability to view the images by categories like portraits and new work. This turned out to be very useful as I will explain in more detail later as this also gave me the ability for a picture to have more than one type. While I was aware that I might need a form request in the backend at this point I was still deliberating how I was going to do this and thus I started on the front-end.
+After drawing out a diagram of the relationships I would need I realised that this wasn't going to be the most complicated app in terms of the back-end, however the importance of its finish would be key. Starting on the backend I began to build out the first app, pictures. The challenge here was adding the ability to allow the admin to add pictures from the page and then add them to the images folder. Having done this I began adding the picture_types.
+
+```Python
+// Picture model 
+
+from django.db import models
+
+class Picture(models.Model):
+    name = models.CharField(max_length=50, unique=True)
+    image = models.ImageField(upload_to='images/')
+    size = models.CharField(max_length=30)
+    style = models.CharField(max_length=50)
+    status = models.CharField(max_length=30)
+    types = models.ManyToManyField('picture_types.PictureType', related_name="pictures")
+
+    def __str__(self):
+        return f"{self.name} - {self.style}"     
+```
+
+The plan surrounding these was to have the ability to view the images by categories like portraits and new work. This turned out to be very useful as I will explain in more detail later as this also gave me the ability for a picture to have more than one type. While I was aware that I might need a form request in the backend at this point I was still deliberating how I was going to do this and thus I started on the front-end.
 
 ![Picture](p-w-duo-sizing.png)
 
