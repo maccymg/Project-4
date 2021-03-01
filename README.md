@@ -4,9 +4,9 @@
 
 A Django and React App
 
-In this project I was tasked with building a full-stack application.
+In this project, I was tasked with building a full-stack application.
 
-- it had to have used a Python Django API with a Django REST Framework to serve data from a Postgres database
+- It had to have used a Python Django API with a Django REST Framework to serve data from a Postgres database
 
 - Consume the API with a separate front-end built with React
 
