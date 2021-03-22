@@ -16,6 +16,7 @@ function NewWork() {
     setIsClosed(!isClosed)
   }
 
+
   React.useEffect(() => {
     const getData = async () => {
       try {
@@ -52,6 +53,11 @@ function NewWork() {
   }) : null
 
 
+  // {carouselPictures && carouselPictures.map(photo => (
+  //   console.log(photo)
+  // ))}
+
+
 
   return (
     <div className="main">
@@ -68,9 +74,6 @@ function NewWork() {
         <div className="main-photo">
           {isClosed ?
             <div className="main-photo-container">
-              {carouselPictures && carouselPictures.map(photo => (
-                console.log(photo)
-              ))}
               {carouselPictures ?
                 <HeroCarousel interval={4000}>
                   <img className="carousel-image"
