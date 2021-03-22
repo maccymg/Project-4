@@ -74,19 +74,19 @@ function NewWork() {
               {carouselPictures ?
                 <HeroCarousel interval={4000}>
                   <img className="carousel-image"
-                    src={`http://localhost:8000${carouselPictures[0].image}`}
+                    src={carouselPictures[0].image}
                   />
                   <img className="carousel-image"
-                    src={`http://localhost:8000${carouselPictures[1].image}`}
+                    src={carouselPictures[1].image}
                   />
                   <img className="carousel-image"
-                    src={`http://localhost:8000${carouselPictures[2].image}`}
+                    src={carouselPictures[2].image}
                   />
                   <img className="carousel-image"
-                    src={`http://localhost:8000${carouselPictures[3].image}`}
+                    src={carouselPictures[3].image}
                   />
                   <img className="carousel-image"
-                    src={`http://localhost:8000${carouselPictures[4].image}`}
+                    src={carouselPictures[4].image}
                   />
                 </HeroCarousel>
                 :
@@ -120,7 +120,7 @@ function NewWork() {
               <div key={picture.id} className="picture-card-container">
                 <Link to={`/pictures/${picture.id}`} style={{ textDecoration: 'none', color: 'black' }}>
                   <div className="image-container">
-                    <img src={`http://localhost:8000${picture.image}`} className="images"></img>
+                    <img src={picture.image} className="images"></img>
                   </div>
                   <div className="picture-card-text">
                     <div className="picture-card-text-name">{picture.name}</div>

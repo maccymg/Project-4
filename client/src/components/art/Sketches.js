@@ -80,7 +80,7 @@ function Sketches() {
             {filteredPictures && filteredPictures.map(picture => (
               <div key={picture.id} className="picture-card-container">
                 <div className="image-container">
-                  <img src={`http://localhost:8000${picture.image}`} className="images"></img>
+                  <img src={picture.image} className="images"></img>
                 </div>
                 <div className="picture-card-text">
                   <div className="picture-card-text-name">{picture.name}</div>

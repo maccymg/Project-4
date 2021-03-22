@@ -9,6 +9,9 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
+
+import django_on_heroku
+
 import os
 from pathlib import Path
 from dotenv import load_dotenv
@@ -47,7 +50,16 @@ INSTALLED_APPS = [
     'pictures',
     'picture_types',
     'enquire_forms',
+    'cloudinary',
 ]
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dry4i2aik',
+    'API_KEY': '988894127463633',
+    'API_SECRET': '4bn_05UNLWEaueYSentbnslARv4'
+}
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -140,3 +152,5 @@ REST_FRAMEWORK = {
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'client', "build", "static"),
 )
+
+django_on_heroku.settings(locals())

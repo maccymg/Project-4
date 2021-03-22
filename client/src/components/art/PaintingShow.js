@@ -73,7 +73,7 @@ function PaintingShow() {
         <div className="bio-main">
           <div className="bio-photo-container">
             <div className="bio-photo">
-              <img src={`http://localhost:8000${painting.image}`} className="p-show-image"></img>
+              <img src={painting.image} className="p-show-image"></img>
             </div>
           </div>
           <div className="p-show-info-container">

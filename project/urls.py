@@ -9,5 +9,7 @@ urlpatterns = [
     path('api/pictures/', include('pictures.urls')),
     path('api/enquire/', include('enquire_forms.urls')),
     path('api/types/', include('picture_types.urls')),
-    # re_path(r'^(?!\/media\/images\/*).*', index)
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    re_path(r'^.*$', index)
+] 
+# re_path(r'^(?!\/media\/images\/*).*', index)
+# + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
