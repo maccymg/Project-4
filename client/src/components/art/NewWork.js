@@ -120,7 +120,7 @@ function NewWork() {
         <div className="picture-content">
           <div className="n-w-title">New Work</div>
           <div className="main-picture-content">
-            {filteredPictures && filteredPictures.map(picture => (
+            {newWork && filteredPictures.map(picture => (
               <div key={picture.id} className="picture-card-container">
                 <Link to={`/pictures/${picture.id}`} style={{ textDecoration: 'none', color: 'black' }}>
                   <div className="image-container">
