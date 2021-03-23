@@ -1,15 +1,41 @@
 import React from 'react'
 import Nav from '../common/Nav'
 import { Link } from 'react-router-dom'
+import { getAllPictures } from '../../lib/api'
 import Header from '../common/Header'
 import Footer from '../common/Footer'
 
 function NewsBio() {
   const [isClosed, setIsClosed] = React.useState(true)
+  const [newWork, setNewWork] = React.useState(null)
 
   const handleMenuToggle = () => {
     setIsClosed(!isClosed)
   }
+
+  React.useEffect(() => {
+    const getData = async () => {
+      try {
+        const { data } = await getAllPictures()
+        setNewWork(data)
+      } catch (err) {
+        console.log(err)
+      }
+    }
+    getData()
+
+  }, [])
+
+  const bioPictures = newWork ? newWork.filter(picture => {
+    let i
+    for (i = 0; i < picture.types.length;) {
+      if (picture.types[i] === 6) {
+        return picture
+      } else {
+        i++
+      }
+    }
+  }) : null
 
   return (
     <div className="main">
@@ -46,11 +72,13 @@ function NewsBio() {
         <Nav />
       </div>
       <div className="bio-main">
-        <div className="bio-photo-container">
-          <img className="bio-photo"
-            src="http://localhost:8000/media/images/Bio-image.jpg"
-          />
-        </div>
+        {newWork && bioPictures.map(picture => (
+          <div key={picture.id} className="bio-photo-container">
+            <img className="bio-photo"
+              src={picture.image}
+            /> 
+          </div>
+        ))}
         <div className="bio-info-container">
           <div className="bio-section-one">
             <div className="p-c-title">News & Biography</div>
