@@ -2,7 +2,7 @@ import React from 'react'
 import Nav from '../common/Nav'
 import { getAllPictures } from '../../lib/api'
 import { Link } from 'react-router-dom'
-// import HeroCarousel from 'react-hero-carousel'
+import HeroCarousel from 'react-hero-carousel'
 import Header from '../common/Header'
 import Footer from '../common/Footer'
 
@@ -41,43 +41,18 @@ function NewWork() {
     }
   }) : null
 
-  // const carouselPictures = newWork ? newWork.filter(photo => {
-  //   let i
-  //   for (i = 0; i < photo.types.length;) {
-  //     if (photo.types[i] === 5) {
-  //       return photo
-  //     } else {
-  //       i++
-  //     }
-  //   }
-  // }) : null
+  const carouselPictures = newWork ? newWork.filter(photo => {
+    let i
+    for (i = 0; i < photo.types.length;) {
+      if (photo.types[i] === 5) {
+        return photo
+      } else {
+        i++
+      }
+    }
+  }) : null
 
 
-  // {carouselPictures && carouselPictures.map(photo => (
-  //   console.log(photo)
-  // ))}
-
-  // {carouselPictures ?
-  //   <HeroCarousel interval={4000}>
-  //     <img className="carousel-image"
-  //       src={carouselPictures[0].image}
-  //     />
-  //     <img className="carousel-image"
-  //       src={carouselPictures[1].image}
-  //     />
-  //     <img className="carousel-image"
-  //       src={carouselPictures[2].image}
-  //     />
-  //     <img className="carousel-image"
-  //       src={carouselPictures[3].image}
-  //     />
-  //     <img className="carousel-image"
-  //       src={carouselPictures[4].image}
-  //     />
-  //   </HeroCarousel>
-  //   :
-  //   <div></div>
-  // }
 
 
 
@@ -96,6 +71,30 @@ function NewWork() {
         <div className="main-photo">
           {isClosed ?
             <div className="main-photo-container">
+              {carouselPictures && carouselPictures.map(photo => (
+                console.log(photo)
+              ))}
+              {carouselPictures ?
+                <HeroCarousel interval={4000}>
+                  <img className="carousel-image"
+                    src={carouselPictures[0].image}
+                  />
+                  <img className="carousel-image"
+                    src={carouselPictures[1].image}
+                  />
+                  <img className="carousel-image"
+                    src={carouselPictures[2].image}
+                  />
+                  <img className="carousel-image"
+                    src={carouselPictures[3].image}
+                  />
+                  <img className="carousel-image"
+                    src={carouselPictures[4].image}
+                  />
+                </HeroCarousel>
+                :
+                <div></div>
+              }
             </div>
             :
             <div className="burger-menu">
