@@ -617,6 +617,14 @@ html {
 @media only screen and (max-width: 420px) {
   .title-name {
     font-size: 35px;
+    margin-left: 20px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .title-name {
+    font-size: 32px;
+    margin-left: 15px;
   }
 }
 
