@@ -17,6 +17,11 @@ html {
   background-color: #faf9f7;
 }
 
+@font-face {
+  font-family: 'Smgfont';
+  src: url(fonts/smgfont-regular.otf)
+}
+
 .header {
   width: 100%;
   display: flex;
