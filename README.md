@@ -101,7 +101,7 @@ Doing a more simple backend as I had no need for users, while limiting the scope
 
 ### Major hurdles and unsolved problems
 
-Major hurdles were managing lots of different sized images and displaying them it lost of changing sizes, focusing on giving the admin complete control over the content and future content of the app.
+Major hurdles were managing lots of different sized images and displaying them in changing sizes, focusing on giving the admin complete control over the content and future content of the app.
 
 In terms of unsolved problems, having the form request being sent to an email address rather than the admin site, displaying different styles while mapping.
 
